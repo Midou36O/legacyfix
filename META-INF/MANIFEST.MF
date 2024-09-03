@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Class-Path: fabric-loader-0.15.6-babric.6-bta.jar failureaccess-1.0.2.ja
+ r asm-tree-9.6.jar mappings.jar client-43db9b498cb67058d2e12d394e650772
+ 2e71bb45.jar log4j-api-2.20.0.jar asm-9.6.jar asm-util-9.6.jar ModMenu-
+ 2.0.6.jar lwjgl-2.9.4-babric.1.jar error_prone_annotations-2.23.0.jar j
+ input-2.0.5.jar jutils-1.0.0.jar mixinextras-fabric-0.3.2.jar terminalc
+ onsoleappender-1.2.0.jar jline-terminal-3.12.1.jar log4j-1.2-api-2.20.0
+ .jar gson-2.10.1.jar jline-reader-3.12.1.jar asm-commons-9.6.jar listen
+ ablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar guava-33.0.0-j
+ re.jar jopt-simple-4.5.jar checker-qual-3.41.0.jar dev-launch-injector-
+ 0.2.1+build.8.jar launchwrapper-1.5.jar minecraft-merged-empty-intermed
+ iate-7.2_01-loom.mappings.7_2_01.layered+hash.31-v2.jar lwjgl_util-2.9.
+ 4-babric.1.jar bta-halplibe-4.1.3.jar slf4j-api-1.8.0-beta4.jar log4j-s
+ lf4j18-impl-2.16.0.jar ModMenu-2.0.6.jar log4j-core-2.20.0.jar asm-anal
+ ysis-9.6.jar sponge-mixin-0.12.5+mixin.0.8.5.jar jsr305-3.0.2.jar commo
+ ns-lang3-3.12.0.jar
+

@@ -1,38 +1,41 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
-  "version": "${version}",
+  "id": "legacyauthmodernizer",
+  "version": "0.1.0",
 
-  "name": "Example Mod",
-  "description": "This mod aims to help new BTA modders.",
+  "name": "Legacy Auth Modernizer",
+  "description": "Uses modern authentication endpoints instead of relying on potentially deprecatable legacy endpoints.",
   "authors": [
-    "Turnip Labs"
+    "Midou360"
   ],
+	"contributors": [
+		"Heapons"
+	],
   "contact": {
     "homepage": "",
     "sources": ""
   },
 
 	"icon": "icon.png",
-  "license": "CC0-1.0",
+  "license": "GPLv3 or later",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-			"turniplabs.examplemod.ExampleMod"
+			"midou.legacyfix.LegacyFix"
     ],
 		"beforeGameStart": [
-			"turniplabs.examplemod.ExampleMod"
+			"midou.legacyfix.LegacyFix"
 		],
 		"afterGameStart": [
-			"turniplabs.examplemod.ExampleMod"
+			"midou.legacyfix.LegacyFix"
 		],
 		"recipesReady": [
-			"turniplabs.examplemod.ExampleMod"
+			"midou.legacyfix.LegacyFix"
 		]
 	},
   "mixins": [
-      "examplemod.mixins.json"
+      "legacyfix.mixins.json"
   ],
 
   "depends": {

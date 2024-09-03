@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "midou.legacyfix.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "GetSkinUrlThreadMixin",
+    "ThreadCheckHasPaidMixin",
+    "NetClientHandlerMixin",
+    "NetClientHandlerAccessor",
+    "ThreadLoginVerifierMixin",
+    "ThreadLoginVerifierAccessor",
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
