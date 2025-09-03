@@ -5,12 +5,13 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "GetSkinUrlThreadMixin",
-    "ThreadCheckHasPaidMixin",
-    "NetClientHandlerMixin",
-    "NetClientHandlerAccessor",
-    "ThreadLoginVerifierMixin",
-    "ThreadLoginVerifierAccessor",
-  ],
+    "GetMonsterSkinUrlThreadMixin",
+    "MinecraftPaidCheckMixin",
+    "PacketHandlerClientMixin",
+    "PacketHandlerClientAccessor",
+    "UUIDParserMixin",
+    "GameSettingsMixin"
+    ],
   "client": [
   ],
   "injectors": {

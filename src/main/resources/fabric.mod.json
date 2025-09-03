@@ -1,19 +1,18 @@
 {
   "schemaVersion": 1,
   "id": "legacyauthmodernizer",
-  "version": "0.1.0",
+  "version": "1.0.0",
 
   "name": "Legacy Auth Modernizer",
-  "description": "Uses modern authentication endpoints instead of relying on potentially deprecatable legacy endpoints.",
+  "description": "Uses modern authentication endpoints instead of relying on potentially deprecate-able legacy endpoints. As a bonus, also allows changing the authentication endpoint.",
   "authors": [
     "Midou360"
   ],
 	"contributors": [
-		"Heapons"
 	],
   "contact": {
-    "homepage": "",
-    "sources": ""
+    "homepage": "http://github.com/midou36o/legacyfix",
+    "sources": "http://github.com/midou36o/legacyfix"
   },
 
 	"icon": "icon.png",
@@ -40,7 +39,7 @@
 
   "depends": {
 		"minecraft": "^7.2-beta",
-    "fabricloader": ">=0.15.5"
+    "fabricloader": ">=0.15.6"
   },
   "suggests": {
   }

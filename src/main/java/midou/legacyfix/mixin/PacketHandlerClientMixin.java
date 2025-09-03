@@ -1,8 +1,8 @@
 package midou.legacyfix.mixin;
 
-import net.minecraft.client.net.handler.NetClientHandler;
-import net.minecraft.core.net.packet.Packet2Handshake;
-import net.minecraft.core.net.packet.Packet1Login;
+import net.minecraft.client.net.handler.PacketHandlerClient;
+import net.minecraft.core.net.packet.PacketLogin;
+import net.minecraft.core.net.packet.PacketPreLogin;
 import net.minecraft.core.util.helper.RSA;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -22,24 +22,24 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import midou.legacyfix.utils.ApiServers;
 
-@Mixin(NetClientHandler.class)
-public class NetClientHandlerMixin {
+@Mixin(PacketHandlerClient.class)
+public class PacketHandlerClientMixin {
 
 	@Inject(method = "handleHandshake", at = @At(value = "INVOKE", target = "Ljava/net/URL;<init>(Ljava/lang/String;)V"), cancellable = true, remap = false)
-	private void onHandleHandshake(Packet2Handshake packet2handshake, CallbackInfo ci) {
-		NetClientHandlerAccessor accessor = (NetClientHandlerAccessor) this;
+	private void onHandleHandshake(PacketPreLogin preloginPacket, CallbackInfo ci) {
+		PacketHandlerClientAccessor accessor = (PacketHandlerClientAccessor) this;
 
 		if (accessor.getMinecraft() == null || accessor.getMinecraft().session == null) {
 			throw new IllegalStateException("Minecraft or session is not set");
 		}
 
-		if (!packet2handshake.username.equals("-")) {
+		if (!preloginPacket.username.equals("-")) {
 			try {
 				String user = accessor.getMinecraft().session.username;
 				String sessionId = accessor.getMinecraft().session.sessionId;
-				String serverId = packet2handshake.username;
+				String serverId = preloginPacket.username;
 
-				if (user == null || sessionId == null || serverId == null) {
+				if (serverId == null) {
 					accessor.getNetworkManager().networkShutdown("disconnect.loginFailedInfo", new Object[]{"Missing parameters"});
 					throw new IllegalArgumentException("Missing parameters");
 				}
@@ -79,7 +79,7 @@ public class NetClientHandlerMixin {
 					bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 					bufferedReader.close();
 					RSA.RSAKeyChain = RSA.generateKeyPair();
-					accessor.getNetworkManager().addToSendQueue(new Packet1Login(accessor.getMinecraft().session.username, 29184, RSA.getPublicKey(RSA.RSAKeyChain.getPublic())));
+					accessor.getNetworkManager().addToSendQueue(new PacketLogin(accessor.getMinecraft().session.username, accessor.getMinecraft().session.uuid, 29444, RSA.getPublicKey(RSA.RSAKeyChain.getPublic())));
 				} else {
 					bufferedReader = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
 					String errorResponse = bufferedReader.readLine();
