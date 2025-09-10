@@ -6,13 +6,17 @@
   "mixins": [
     "GetSkinUrlThreadMixin",
     "GetMonsterSkinUrlThreadMixin",
-    "MinecraftPaidCheckMixin",
-    "PacketHandlerClientMixin",
-    "PacketHandlerClientAccessor",
-    "UUIDParserMixin",
-    "GameSettingsMixin"
+    "UUIDParserMixin"
     ],
   "client": [
+    "PacketHandlerClientMixin",
+    "PacketHandlerClientAccessor",
+    "MinecraftPaidCheckMixin",
+    "GameSettingsMixin"
+  ],
+  "server": [
+    "PacketHandlerLoginMixin",
+    "PacketHandlerLoginAccessor"
   ],
   "injectors": {
     "defaultRequire": 1
