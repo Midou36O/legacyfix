@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "legacyauthmodernizer",
-  "version": "1.0.0",
+  "version": "1.0.1",
 
   "name": "Legacy Auth Modernizer",
   "description": "Uses modern authentication endpoints instead of relying on potentially deprecate-able legacy endpoints. As a bonus, also allows changing the authentication endpoint.",
